@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // this is the login page
 
+=======
+>>>>>>> 23e994f0bec39bc1618f5e6cc13cb3032e666bab
 "use client";
 import { useSession } from "next-auth/react";
 
@@ -34,4 +37,8 @@ export default function Home() {
       )}
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 23e994f0bec39bc1618f5e6cc13cb3032e666bab
