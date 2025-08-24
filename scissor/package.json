@@ -2,12 +2,18 @@
   "name": "scissor",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+  "scriptss": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start"
   },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
+    "mongoose": "^8.18.0",
     "next": "15.5.0",
     "next-auth": "^4.24.11",
     "react": "19.1.0",
