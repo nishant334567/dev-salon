@@ -2,3 +2,43 @@
 
 //get-> to get all the devs
 //post-> to create a new dev
+
+import { connectDB } from "@/lib/mongodb";
+import Devs from "@models/Devs";
+
+export async function POST(request) {
+  try {
+    await connectDB;
+    const body = await request.json();
+    const { name, email, experience, charge, techStack, phoneNumber } = body;
+
+    if (!name || !email) {
+      return Response.json(
+        {
+          error: "name or email are required.",
+        },
+        { status: 400 }
+      );
+    }
+
+    const newDev = await Devs.create({
+      name,
+      email,
+      experience,
+      charge,
+      techStack,
+      phoneNumber,
+    });
+
+    return Response.json(
+      { message: "Developer created successfully", dev: newDev },
+      { status: 201 }
+    );
+  } catch (error) {
+    console.error("Error creating developer:", error);
+    return Response.json(
+      { error: "Failed to create developer" },
+      { status: 500 }
+    );
+  }
+}
