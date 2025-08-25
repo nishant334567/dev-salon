@@ -13,4 +13,4 @@ const DevSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.models.Devs || mongoose.model("Devs", DevSchema);
+export default mongoose.models.Dev || mongoose.model("Dev", DevSchema);

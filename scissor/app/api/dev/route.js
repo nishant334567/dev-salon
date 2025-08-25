@@ -4,11 +4,11 @@
 //post-> to create a new dev
 
 import { connectDB } from "@/lib/mongodb";
-import Devs from "@models/Devs";
+import Dev from "@/models/Dev";
 
 export async function POST(request) {
   try {
-    await connectDB;
+    await connectDB();
     const body = await request.json();
     const { name, email, experience, charge, techStack, phoneNumber } = body;
 
@@ -21,7 +21,7 @@ export async function POST(request) {
       );
     }
 
-    const newDev = await Devs.create({
+    const newDev = await Dev.create({
       name,
       email,
       experience,
