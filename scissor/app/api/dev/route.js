@@ -6,6 +6,19 @@
 import { connectDB } from "@/lib/mongodb";
 import Dev from "@/models/Dev";
 
+export async function GET() {
+  try {
+    await connectDB();
+    const dev = await Dev.find({});
+    return Response.json({ success: true, dev }, { status: 200 });
+  } catch (error) {
+    console.error("Error in fetching developers:", error);
+    return Response.json(
+      { success: false, error: "Failed to fetch developers" },
+      { status: 500 }
+    );
+  }
+}
 export async function POST(request) {
   try {
     await connectDB();
