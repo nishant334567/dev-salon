@@ -17,7 +17,7 @@ export default function DevDetails() {
 
     const fetchDev = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/dev/${param.id}`);
+        const res = await fetch(`/api/dev/${param.id}`);
         const data = await res.json();
         setDev(data);
         console.log(data);

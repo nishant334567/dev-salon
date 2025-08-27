@@ -15,7 +15,7 @@ export default function AllDevs() {
   useEffect(() => {
     const fetchDevs = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/dev");
+        const res = await fetch("/api/dev");
         const data = await res.json();
         setDevs(data.dev || []); // array set karna hai
       } catch (error) {
